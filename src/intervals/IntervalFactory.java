@@ -8,3 +8,4 @@ public class IntervalFactory {
 		return new Interval(minimum, maximum, opening);
 	}
 }
+
