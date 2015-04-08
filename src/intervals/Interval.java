@@ -6,6 +6,7 @@ public class Interval {
 	private double minimum;
 	private double maximum;
 	private Opening opening;
+	
 
 	public Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
