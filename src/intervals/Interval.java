@@ -16,6 +16,7 @@ public abstract class Interval {
 	public double midPoint() {
 		return (getMaximum() + getMinimum()) / 2;
 	}
+	
 
 	public boolean includes(double value) {
 		switch (getOpening()) {
