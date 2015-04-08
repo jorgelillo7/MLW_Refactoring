@@ -27,7 +27,8 @@ public abstract class Interval {
 			//return getMinimum() <= value && value < getMaximum();
 		    return includesRightOpened(value);
 		case UNOPENED:
-			return getMinimum() <= value && value <= getMaximum();
+			//return getMinimum() <= value && value <= getMaximum();
+		    return includesUnopened(value);
 		default:
 			assert false;
 			return false;
