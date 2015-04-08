@@ -24,7 +24,8 @@ public abstract class Interval {
 			//return getMinimum() < value && value <= getMaximum();
 		    return includesLeftOpened(value);
 		case RIGHT_OPENED:
-			return getMinimum() <= value && value < getMaximum();
+			//return getMinimum() <= value && value < getMaximum();
+		    return includesRightOpened(value);
 		case UNOPENED:
 			return getMinimum() <= value && value <= getMaximum();
 		default:
