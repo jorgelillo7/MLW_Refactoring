@@ -31,6 +31,7 @@ public abstract class Interval {
 			return false;
 		}
 	}
+	
 
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.getMinimum());
