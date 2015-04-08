@@ -11,4 +11,8 @@ public class IntervalLeftOpened extends Interval {
         return Opening.LEFT_OPENED;
     }
     
+    public boolean includes(double value) {
+        return getMinimum() < value && value <= getMaximum();
+    }
+    
 }
