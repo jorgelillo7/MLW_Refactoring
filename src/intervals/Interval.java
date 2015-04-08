@@ -34,9 +34,7 @@ public abstract class Interval {
 	
 	
 
-    private boolean includesRightOpened(double value) {
-        return getMinimum() <= value && value < getMaximum();
-    }
+    
 
     private boolean includesLeftOpened(double value) {
         return getMinimum() < value && value <= getMaximum();
