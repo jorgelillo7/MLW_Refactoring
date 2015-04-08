@@ -1,5 +1,5 @@
 package intervals;
 
-public class IntervalUnopened {
+public class IntervalUnopened extends Interval{
 
 }
