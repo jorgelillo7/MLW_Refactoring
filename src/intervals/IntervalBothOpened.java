@@ -10,5 +10,9 @@ public class IntervalBothOpened extends Interval{
     Opening getOpening() {
         return Opening.BOTH_OPENED;
     }
+    
+    public boolean includes(double value) {
+        return getMinimum() < value && value < getMaximum();
+    }
 
 }
