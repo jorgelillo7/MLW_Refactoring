@@ -9,7 +9,7 @@ public class IntervalRightOpened extends Interval {
         // TODO Auto-generated constructor stub
     }
 
-    Opening getOpening() {
+    public Opening getOpening() {
         return Opening.RIGHT_OPENED;
     }
     

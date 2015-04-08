@@ -7,7 +7,7 @@ public class IntervalUnopened extends Interval{
         // TODO Auto-generated constructor stub
     }
 
-    Opening getOpening() {
+    public Opening getOpening() {
         return Opening.UNOPENED;
     }
     

@@ -13,10 +13,8 @@ public abstract class Interval {
 	public double midPoint() {
 		return (getMaximum() + getMinimum()) / 2;
 	}
-	
-	
 
-	abstract boolean includes(double value);
+	public abstract boolean includes(double value);
 	
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.getMinimum());
@@ -161,7 +159,7 @@ public abstract class Interval {
         this.minimum = minimum;
     }
 
-    abstract Opening getOpening();
+    public abstract Opening getOpening();
 
 
 }
