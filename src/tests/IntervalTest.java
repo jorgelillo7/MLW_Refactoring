@@ -27,6 +27,7 @@ public class IntervalTest {
 		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.UNOPENED).midPoint(), 0.0);
 	}
 
+	
 	@Test
 	public void includeValueTest() {
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.BOTH_OPENED).includes(-3));
