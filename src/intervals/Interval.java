@@ -161,4 +161,12 @@ public class Interval {
 		return false;
 	}
 
+    public double getMaximum() {
+        return maximum;
+    }
+
+    public void setMaximum(double maximum) {
+        this.maximum = maximum;
+    }
+
 }
