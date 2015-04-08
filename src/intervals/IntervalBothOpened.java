@@ -6,5 +6,9 @@ public class IntervalBothOpened extends Interval{
         super(minimum, maximum, opening);
         // TODO Auto-generated constructor stub
     }
+    
+    Opening getOpening() {
+        return Opening.BOTH_OPENED;
+    }
 
 }
