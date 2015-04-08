@@ -16,31 +16,7 @@ public abstract class Interval {
 	
 	
 
-	public boolean includes(double value) {
-		switch (getOpening()) {
-		case BOTH_OPENED:
-			return includesBothOpened(value);
-		case LEFT_OPENED:
-		    return includesLeftOpened(value);
-		case RIGHT_OPENED:
-		    return includesRightOpened(value);
-		case UNOPENED:
-		    return includesUnopened(value);
-		default:
-			assert false;
-			return false;
-		}
-	}
-	
-	
-
-    
-
-    
-
-    public boolean includesBothOpened(double value) {
-	    return getMinimum() < value && value < getMaximum();
-	}
+	abstract boolean includes(double value);
 	
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.getMinimum());
