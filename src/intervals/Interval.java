@@ -181,8 +181,5 @@ public abstract class Interval {
         return opening;
     }
 
-    private void setOpening(Opening opening) {
-        this.opening = opening;
-    }
 
 }
