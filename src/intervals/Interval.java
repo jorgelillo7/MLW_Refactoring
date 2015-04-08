@@ -35,7 +35,12 @@ public abstract class Interval {
 		}
 	}
 	
-	private boolean includesRightOpened(double value) {
+	private boolean includesUnopened(double value) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    private boolean includesRightOpened(double value) {
         // TODO Auto-generated method stub
         return false;
     }
