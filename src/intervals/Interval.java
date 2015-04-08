@@ -177,9 +177,7 @@ public abstract class Interval {
         this.minimum = minimum;
     }
 
-    private Opening getOpening() {
-        return opening;
-    }
+    abstract Opening getOpening();
 
 
 }
