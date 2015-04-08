@@ -16,10 +16,9 @@ public abstract class Interval {
 
 	public abstract boolean includes(double value);
 	
+	//R. Replace Conditional with Polymorphism - IntervalOpened include(interval)
 	
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.getMinimum());
-		boolean maximumIncluded = this.includes(interval.getMaximum());
 		switch (getOpening()) {
 		case BOTH_OPENED:
 			switch (interval.getOpening()) {
