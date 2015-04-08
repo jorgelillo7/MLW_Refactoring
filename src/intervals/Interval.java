@@ -23,7 +23,6 @@ public abstract class Interval {
 		case LEFT_OPENED:
 		    return includesLeftOpened(value);
 		case RIGHT_OPENED:
-			//return getMinimum() <= value && value < getMaximum();
 		    return includesRightOpened(value);
 		case UNOPENED:
 			//return getMinimum() <= value && value <= getMaximum();
@@ -40,8 +39,7 @@ public abstract class Interval {
     }
 
     private boolean includesRightOpened(double value) {
-        // TODO Auto-generated method stub
-        return false;
+        return getMinimum() <= value && value < getMaximum();
     }
 
     private boolean includesLeftOpened(double value) {
