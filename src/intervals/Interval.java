@@ -21,7 +21,6 @@ public abstract class Interval {
 		case BOTH_OPENED:
 			return includesBothOpened(value);
 		case LEFT_OPENED:
-			//return getMinimum() < value && value <= getMaximum();
 		    return includesLeftOpened(value);
 		case RIGHT_OPENED:
 			//return getMinimum() <= value && value < getMaximum();
@@ -33,7 +32,7 @@ public abstract class Interval {
 			assert false;
 			return false;
 		}
-	}
+	}//R. Extract Method - public boolean includes(double value)
 	
 	private boolean includesUnopened(double value) {
         // TODO Auto-generated method stub
@@ -46,8 +45,7 @@ public abstract class Interval {
     }
 
     private boolean includesLeftOpened(double value) {
-        // TODO Auto-generated method stub
-        return false;
+        return getMinimum() < value && value <= getMaximum();
     }
 
     public boolean includesBothOpened(double value) {
