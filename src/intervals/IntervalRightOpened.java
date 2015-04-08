@@ -17,4 +17,5 @@ public class IntervalRightOpened extends Interval {
         return getMinimum() <= value && value < getMaximum();
     }
     
+    
 }
