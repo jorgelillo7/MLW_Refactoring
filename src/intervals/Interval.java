@@ -17,7 +17,6 @@ public class Interval {
 		return (getMaximum() + getMinimum()) / 2;
 	}
 
-	
 	public boolean includes(double value) {
 		switch (getOpening()) {
 		case BOTH_OPENED:
