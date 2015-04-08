@@ -19,7 +19,7 @@ public abstract class Interval {
 	public boolean includes(double value) {
 		switch (getOpening()) {
 		case BOTH_OPENED:
-			return getMinimum() < value && value < getMaximum();
+			return includesBothOpened(value);
 		case LEFT_OPENED:
 			return getMinimum() < value && value <= getMaximum();
 		case RIGHT_OPENED:
@@ -30,6 +30,10 @@ public abstract class Interval {
 			assert false;
 			return false;
 		}
+	}
+	
+	public boolean includesBothOpened(double value) {
+	    return getMinimum() < value && value < getMaximum();
 	}
 	
 
