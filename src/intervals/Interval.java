@@ -1,7 +1,6 @@
 package intervals;
 
 public abstract class Interval {
-
     
 	private double minimum;
 	private double maximum;
@@ -16,6 +15,7 @@ public abstract class Interval {
 	public double midPoint() {
 		return (getMaximum() + getMinimum()) / 2;
 	}
+	
 	
 
 	public boolean includes(double value) {
