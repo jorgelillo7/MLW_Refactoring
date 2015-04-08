@@ -35,7 +35,12 @@ public abstract class Interval {
 		}
 	}
 	
-	public boolean includesBothOpened(double value) {
+	private boolean includesLeftOpened(double value) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    public boolean includesBothOpened(double value) {
 	    return getMinimum() < value && value < getMaximum();
 	}
 	
