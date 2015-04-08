@@ -4,12 +4,10 @@ public abstract class Interval {
     
 	private double minimum;
 	private double maximum;
-	private Opening opening;
 
-	public Interval(double minimum, double maximum, Opening opening) {
+	public Interval(double minimum, double maximum) {
 		this.setMinimum(minimum);
 		this.setMaximum(maximum);
-		this.setOpening(opening);
 	}
 
 	public double midPoint() {
