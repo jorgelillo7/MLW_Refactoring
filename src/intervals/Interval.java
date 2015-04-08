@@ -30,7 +30,7 @@ public abstract class Interval {
 			assert false;
 			return false;
 		}
-	}//R. Extract Method - public boolean includes(double value)
+	}
 	
 	private boolean includesUnopened(double value) {
 	    return getMinimum() <= value && value <= getMaximum();
@@ -48,7 +48,6 @@ public abstract class Interval {
 	    return getMinimum() < value && value < getMaximum();
 	}
 	
-
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.getMinimum());
 		boolean maximumIncluded = this.includes(interval.getMaximum());
