@@ -6,28 +6,27 @@ public class Interval {
 	private double minimum;
 	private double maximum;
 	private Opening opening;
-	
 
 	public Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
-		this.maximum = maximum;
+		this.setMaximum(maximum);
 		this.opening = opening;
 	}
 
 	public double midPoint() {
-		return (maximum + minimum) / 2;
+		return (getMaximum() + minimum) / 2;
 	}
 
 	public boolean includes(double value) {
 		switch (opening) {
 		case BOTH_OPENED:
-			return minimum < value && value < maximum;
+			return minimum < value && value < getMaximum();
 		case LEFT_OPENED:
-			return minimum < value && value <= maximum;
+			return minimum < value && value <= getMaximum();
 		case RIGHT_OPENED:
-			return minimum <= value && value < maximum;
+			return minimum <= value && value < getMaximum();
 		case UNOPENED:
-			return minimum <= value && value <= maximum;
+			return minimum <= value && value <= getMaximum();
 		default:
 			assert false;
 			return false;
@@ -37,19 +36,19 @@ public class Interval {
 
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
+		boolean maximumIncluded = this.includes(interval.getMaximum());
 		switch (opening) {
 		case BOTH_OPENED:
 			switch (interval.opening) {
 			case BOTH_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case LEFT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
 						&& (maximumIncluded);
 			case RIGHT_OPENED:
 				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case UNOPENED:
 				return (minimumIncluded) && (maximumIncluded);
 			default:
@@ -60,16 +59,16 @@ public class Interval {
 			switch (interval.opening) {
 			case BOTH_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case LEFT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case RIGHT_OPENED:
 				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case UNOPENED:
 				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			default:
 				assert false;
 				return false;
@@ -78,13 +77,13 @@ public class Interval {
 			switch (interval.opening) {
 			case BOTH_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case LEFT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
 						&& (maximumIncluded);
 			case RIGHT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case UNOPENED:
 				return (minimumIncluded || minimum == interval.minimum)
 						&& (maximumIncluded);
@@ -96,16 +95,16 @@ public class Interval {
 			switch (interval.opening) {
 			case BOTH_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case LEFT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case RIGHT_OPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			case UNOPENED:
 				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
+						&& (maximumIncluded || getMaximum() == interval.getMaximum());
 			default:
 				assert false;
 				return false;
@@ -117,7 +116,7 @@ public class Interval {
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
+		if (minimum == interval.getMaximum()) {
 			switch (opening) {
 			case BOTH_OPENED:
 			case LEFT_OPENED:
@@ -131,7 +130,7 @@ public class Interval {
 				return false;
 			}
 		}
-		if (maximum == interval.minimum) {
+		if (getMaximum() == interval.minimum) {
 			switch (opening) {
 			case BOTH_OPENED:
 			case RIGHT_OPENED:
@@ -146,7 +145,7 @@ public class Interval {
 			}
 		}
 		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
+				|| this.includes(interval.getMaximum());
 	}
 
 	@Override
@@ -161,11 +160,11 @@ public class Interval {
 		return false;
 	}
 
-    public double getMaximum() {
+    private double getMaximum() {
         return maximum;
     }
 
-    public void setMaximum(double maximum) {
+    private void setMaximum(double maximum) {
         this.maximum = maximum;
     }
 
