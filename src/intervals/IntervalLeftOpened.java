@@ -16,6 +16,7 @@ public class IntervalLeftOpened extends Interval {
     }
     
     public boolean includes(Interval interval) {
-        
+        boolean minimumIncluded = this.includes(interval.getMinimum());
+        boolean maximumIncluded = this.includes(interval.getMaximum());
     }
 }
