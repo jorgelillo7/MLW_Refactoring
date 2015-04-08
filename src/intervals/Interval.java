@@ -32,9 +32,7 @@ public abstract class Interval {
 		}
 	}
 	
-	private boolean includesUnopened(double value) {
-	    return getMinimum() <= value && value <= getMaximum();
-    }
+	
 
     private boolean includesRightOpened(double value) {
         return getMinimum() <= value && value < getMaximum();
@@ -174,7 +172,7 @@ public abstract class Interval {
 		return false;
 	}
 
-    private double getMaximum() {
+    public double getMaximum() {
         return maximum;
     }
 
@@ -182,9 +180,10 @@ public abstract class Interval {
         this.maximum = maximum;
     }
 
-    private double getMinimum() {
+    public double getMinimum() {
         return minimum;
     }
+    
 
     private void setMinimum(double minimum) {
         this.minimum = minimum;
