@@ -14,5 +14,9 @@ public class IntervalBothOpened extends Interval{
     public boolean includes(double value) {
         return getMinimum() < value && value < getMaximum();
     }
+    
+    public boolean includes(Interval interval) {
+        
+    }
 
 }
