@@ -3,7 +3,7 @@ package intervals;
 public class IntervalLeftOpened extends Interval {
 
     public IntervalLeftOpened(double minimum, double maximum) {
-        super(minimum, maximum);
+        super(new OpenPoint(minimum), new ClosePoint(maximum));
         // TODO Auto-generated constructor stub
     }
 

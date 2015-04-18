@@ -3,7 +3,7 @@ package intervals;
 public class IntervalUnopened extends Interval{
     
     public IntervalUnopened(double minimum, double maximum) {
-        super(minimum, maximum);
+        super(new ClosePoint(minimum), new ClosePoint(maximum));
         // TODO Auto-generated constructor stub
     }
 

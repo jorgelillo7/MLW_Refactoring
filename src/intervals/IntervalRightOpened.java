@@ -5,7 +5,7 @@ public class IntervalRightOpened extends Interval {
 
     
     public IntervalRightOpened(double minimum, double maximum) {
-        super(minimum, maximum);
+        super(new ClosePoint(minimum), new OpenPoint(maximum));
         // TODO Auto-generated constructor stub
     }
 
