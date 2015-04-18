@@ -34,40 +34,7 @@ public abstract class Interval {
     
     public abstract boolean intersectWith(IntervalUnopened interval);
 
-	public boolean intersectsWith(Interval interval) {
-	    
-	    return interval.intersectsWith(this);
-	    
-		/*if (getMinimum() == interval.getMaximum()) {
-			switch (getOpening()) {
-			case BOTH_OPENED:
-			case LEFT_OPENED:
-				return false;
-			case RIGHT_OPENED:
-			case UNOPENED:
-				return interval.getOpening() == Opening.LEFT_OPENED ||
-						interval.getOpening() == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}
-		if (getMaximum() == interval.getMinimum()) {
-			switch (getOpening()) {
-			case BOTH_OPENED:
-			case RIGHT_OPENED:
-				return false;
-			case LEFT_OPENED:
-			case UNOPENED:
-				return interval.getOpening() == Opening.RIGHT_OPENED ||
-						interval.getOpening() == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}*/
-		
-	}
+	public abstract boolean intersectsWith(Interval interval);
 
 	@Override
 	public String toString() {

@@ -101,5 +101,12 @@ public class IntervalUnopened extends Interval{
 
         return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
+    
+    @Override
+    public boolean intersectsWith(Interval interval) {
+        
+        return interval.intersectsWith(this);
+        
+    }
 
 }
