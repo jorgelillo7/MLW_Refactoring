@@ -23,7 +23,7 @@ public class IntervalLeftOpened extends Interval {
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
+        return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue())
                 && (maximumIncluded);
         
     }
@@ -32,22 +32,22 @@ public class IntervalLeftOpened extends Interval {
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || interval.getMinimum() == this.getMinimum())
-                && (maximumIncluded || interval.getMaximum() == this.getMaximum());
+        return (minimumIncluded || interval.getMinimum().getValue() == this.getMinimum().getValue())
+                && (maximumIncluded || interval.getMaximum().getValue() == this.getMaximum().getValue());
     }
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || interval.getMinimum() == this.getMinimum()) && (maximumIncluded);
+        return (minimumIncluded || interval.getMinimum().getValue() == this.getMinimum().getValue()) && (maximumIncluded);
     }
     
     @Override
     public boolean includes(IntervalUnopened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded) && (maximumIncluded || interval.getMaximum() == this.getMaximum());
+        return (minimumIncluded) && (maximumIncluded || interval.getMaximum().getValue() == this.getMaximum().getValue());
     }
 
     
@@ -58,11 +58,11 @@ public class IntervalLeftOpened extends Interval {
 
     @Override
     public boolean intersectsWith(IntervalBothOpened interval) {
-        if (this.getMinimum() == interval.getMaximum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
             return false;
         }
         
-        if (this.getMaximum() == interval.getMinimum()) {
+        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return false;
         }
 
@@ -71,11 +71,11 @@ public class IntervalLeftOpened extends Interval {
 
     @Override
     public boolean intersectsWith(IntervalLeftOpened interval) {
-        if (this.getMinimum() == interval.getMaximum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
             return false;
         }
         
-        if (this.getMaximum() == interval.getMinimum()) {
+        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return false;
         }
 
@@ -84,11 +84,11 @@ public class IntervalLeftOpened extends Interval {
 
     @Override
     public boolean intersectsWith(IntervalRightOpened interval) {
-        if (this.getMinimum() == interval.getMaximum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
             return false;
         }
         
-        if (this.getMaximum() == interval.getMinimum()) {
+        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return true;
         }
 
@@ -97,11 +97,11 @@ public class IntervalLeftOpened extends Interval {
 
     @Override
     public boolean intersectsWith(IntervalUnopened interval) {
-        if (this.getMinimum() == interval.getMaximum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
             return false;
         }
         
-        if (this.getMaximum() == interval.getMinimum()) {
+        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return true;
         }
 
