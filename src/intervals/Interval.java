@@ -14,7 +14,7 @@ public abstract class Interval {
 		return (getMaximum().getValue() + getMinimum().getValue()) / 2;
 	}
 
-	public abstract boolean includes(double value);
+	public abstract boolean includes(Point point);
 	
 	public abstract boolean includes(Interval interval);
 	

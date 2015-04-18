@@ -11,8 +11,8 @@ public class IntervalLeftOpened extends Interval {
         return Opening.LEFT_OPENED;
     }
     
-    public boolean includes(double value) {
-        return this.getMinimum() < value && value <= this.getMaximum();
+    public boolean includes(Point point) {
+        return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
     }
     
     @Override

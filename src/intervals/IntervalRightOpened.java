@@ -13,8 +13,8 @@ public class IntervalRightOpened extends Interval {
         return Opening.RIGHT_OPENED;
     }
     
-    public boolean includes(double value) {
-        return getMinimum() <= value && value < getMaximum();
+    public boolean includes(Point point) {
+        return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
     }
     
     @Override
