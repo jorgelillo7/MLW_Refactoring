@@ -36,7 +36,6 @@ public abstract class Interval {
 
 	public abstract boolean intersectsWith(Interval interval);
 	
-	
 	@Override
 	public boolean equals(Object object) {
 		// TODO
