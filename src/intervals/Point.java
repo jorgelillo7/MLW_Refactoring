@@ -51,10 +51,6 @@ public abstract class Point {
         return this.menor(point) || this.igual(point);
     }
     
-    //public boolean mayor(Point point) {
-    //    return this.getValue() > point.getValue();
-    //}
-    
     public boolean mayorIgual(Point point) {
         return this.mayor(point) || this.igual(point);
     }

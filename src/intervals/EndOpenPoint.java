@@ -33,62 +33,51 @@ public class EndOpenPoint extends Point {
 
     @Override
     public boolean menor(Point point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.menor(this);
     }
 
     @Override
     public boolean menor(InitialOpenPoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() < this.getValue();
     }
 
     @Override
     public boolean menor(InitialClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() < this.getValue();
     }
 
     @Override
     public boolean menor(EndOpenPoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() < this.getValue();
     }
 
     @Override
     public boolean menor(EndClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() < this.getValue();
     }
 
     @Override
     public boolean mayor(Point point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.mayor(this);
     }
 
     @Override
     public boolean mayor(InitialOpenPoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() > this.getValue();
     }
 
     @Override
     public boolean mayor(InitialClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() > this.getValue();
     }
 
     @Override
     public boolean mayor(EndOpenPoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() > this.getValue();
     }
 
     @Override
     public boolean mayor(EndClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return point.getValue() > this.getValue();
     }
-
 }
