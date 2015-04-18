@@ -4,7 +4,6 @@ public class InitialClosePoint extends Point{
 
     public InitialClosePoint(double value) {
         super(value);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -24,14 +23,12 @@ public class InitialClosePoint extends Point{
 
     @Override
     public boolean igual(EndOpenPoint point) {
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public boolean igual(EndClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+        return this.getValue() == point.getValue();
     }
 
 }

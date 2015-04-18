@@ -14,7 +14,7 @@ public class InitialOpenPoint extends Point {
 
     @Override
     public boolean igual(InitialOpenPoint point) {
-        return false;
+        return true;
     }
 
     @Override
@@ -24,13 +24,11 @@ public class InitialOpenPoint extends Point {
 
     @Override
     public boolean igual(EndOpenPoint point) {
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public boolean igual(EndClosePoint point) {
-        // TODO Auto-generated method stub
         return false;
     }
 

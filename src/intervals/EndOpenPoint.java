@@ -4,7 +4,6 @@ public class EndOpenPoint extends Point {
 
     public EndOpenPoint(double value) {
         super(value);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -14,7 +13,7 @@ public class EndOpenPoint extends Point {
 
     @Override
     public boolean igual(EndOpenPoint point) {
-        return false;
+        return true;
     }
 
     @Override
@@ -24,13 +23,11 @@ public class EndOpenPoint extends Point {
 
     @Override
     public boolean igual(InitialOpenPoint point) {
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public boolean igual(EndClosePoint point) {
-        // TODO Auto-generated method stub
         return false;
     }
 
