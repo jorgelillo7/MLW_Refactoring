@@ -16,15 +16,15 @@ public abstract class Point {
         this.value = value;
     }
     
-    public boolean igual(Point point) {
-        return this.getValue() == point.getValue();
-    }
+    public abstract boolean igual(Point point);
     
-    public abstract boolean menor(Point point);
-
-    public abstract boolean menor(OpenPoint point);
-
-    public abstract boolean menor(ClosePoint point);
+    public abstract boolean igual(OpenPoint point);
+    
+    public abstract boolean igual(ClosePoint point);
+    
+    public boolean menor(Point point) {
+        return point.getValue() < this.getValue();
+    }
 
     public boolean menorIgual(Point point) {
         return this.menor(point) || this.igual(point);

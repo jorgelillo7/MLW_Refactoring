@@ -8,21 +8,18 @@ public class OpenPoint extends Point {
     }
 
     @Override
-    public boolean menor(Point point) {
-        // TODO Auto-generated method stub
+    public boolean igual(Point point) {
+        return point.igual(this);
+    }
+
+    @Override
+    public boolean igual(OpenPoint point) {
         return false;
     }
 
     @Override
-    public boolean menor(OpenPoint point) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public boolean menor(ClosePoint point) {
-        // TODO Auto-generated method stub
-        return false;
+    public boolean igual(ClosePoint point) {
+       return false;
     }
 
 }
