@@ -5,7 +5,7 @@ public class IntervalRightOpened extends Interval {
 
     
     public IntervalRightOpened(double minimum, double maximum) {
-        super(new ClosePoint(minimum), new OpenPoint(maximum));
+        super(new InitialClosePoint(minimum), new InitialOpenPoint(maximum));
         // TODO Auto-generated constructor stub
     }
 
@@ -18,7 +18,7 @@ public class IntervalRightOpened extends Interval {
     }
     
     public boolean includes(double value) {
-        return this.includes(new ClosePoint(value));
+        return this.includes(new InitialClosePoint(value));
     }
     
     @Override

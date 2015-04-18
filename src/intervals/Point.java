@@ -18,9 +18,13 @@ public abstract class Point {
     
     public abstract boolean igual(Point point);
     
-    public abstract boolean igual(OpenPoint point);
+    public abstract boolean igual(InitialOpenPoint point);
     
-    public abstract boolean igual(ClosePoint point);
+    public abstract boolean igual(InitialClosePoint point);
+    
+    public abstract boolean igual(EndOpenPoint point);
+    
+    public abstract boolean igual(EndClosePoint point);
     
     public boolean menor(Point point) {
         return this.getValue() < point.getValue();
