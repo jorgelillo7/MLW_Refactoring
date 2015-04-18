@@ -21,8 +21,19 @@ public class IntervalLeftOpened extends Interval {
     
     @Override
     public boolean includes(IntervalBothOpened interval){
+        System.out.println();
+        System.out.println("ENTRADA "+interval.toString());
+        System.out.println("THIS "+this.toString());
         boolean minimumIncluded = interval.includes(this.getMinimum());
+        if(minimumIncluded)
+            System.out.println("TRUE");
+        else
+            System.out.println("FALSE");
         boolean maximumIncluded = interval.includes(this.getMaximum());
+        if(maximumIncluded)
+            System.out.println("TRUE");
+        else
+            System.out.println("FALSE");
         return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue())
                 && (maximumIncluded);
         
@@ -117,6 +128,6 @@ public class IntervalLeftOpened extends Interval {
     
     @Override
     public String toString() {
-        return "Interval (" + getMinimum() + ", " + getMaximum() + "]";
+        return "Interval (" + getMinimum().getValue() + ", " + getMaximum().getValue() + "]";
     }
 }

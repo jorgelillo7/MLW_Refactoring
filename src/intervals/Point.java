@@ -31,11 +31,11 @@ public abstract class Point {
     }
     
     public boolean mayor(Point point) {
-        return !this.menorIgual(point);
+        return this.getValue() > point.getValue();
     }
     
     public boolean mayorIgual(Point point) {
-        return !this.menor(point);
+        return this.mayor(point) || this.igual(point);
     }
 
 

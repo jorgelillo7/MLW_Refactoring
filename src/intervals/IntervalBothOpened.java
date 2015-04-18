@@ -12,7 +12,7 @@ public class IntervalBothOpened extends Interval{
     }
     
     public boolean includes(Point point) {
-        return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
+        return this.getMinimum().menorIgual(point) && this.getMaximum().mayorIgual(point);
     }
     
     public boolean includes(double value) {
@@ -21,32 +21,22 @@ public class IntervalBothOpened extends Interval{
     
     @Override
     public boolean includes(IntervalBothOpened interval){
-        boolean minimumIncluded = interval.includes(this.getMinimum());
-        boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue())
-                && (maximumIncluded || this.getMaximum().getValue() == interval.getMaximum().getValue());
-        
+        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));    
     }
     
     @Override
     public boolean includes(IntervalLeftOpened interval) {
-        boolean minimumIncluded = interval.includes(this.getMinimum());
-        boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue()) && (maximumIncluded);
+        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
     }
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
-        boolean minimumIncluded = interval.includes(this.getMinimum());
-        boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded) && (maximumIncluded || this.getMaximum().getValue() == interval.getMaximum().getValue());
+        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
     }
     
     @Override
     public boolean includes(IntervalUnopened interval) {
-        boolean minimumIncluded = interval.includes(this.getMinimum());
-        boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded) && (maximumIncluded);
+        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
     }
 
     @Override
@@ -99,7 +89,7 @@ public class IntervalBothOpened extends Interval{
     
     @Override
     public String toString() {
-        return "Interval (" + getMinimum() + ", " + getMaximum() + ")";
+        return "Interval (" + getMinimum().getValue() + ", " + getMaximum().getValue() + ")";
     }
 
     
