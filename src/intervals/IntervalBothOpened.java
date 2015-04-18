@@ -59,6 +59,8 @@ public class IntervalBothOpened extends Interval{
         if (this.getMaximum() == interval.getMinimum()) {
             return false;
         }
+        
+        System.out.println("Hasta aqui he llegado");
 
         return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
@@ -107,6 +109,11 @@ public class IntervalBothOpened extends Interval{
         System.out.println("Yo soy "+this.getClass()+" y la entrada es "+interval.getClass());
         return interval.intersectsWith(this);
         
+    }
+    
+    @Override
+    public String toString() {
+        return "Interval (" + getMinimum() + ", " + getMaximum() + ")";
     }
 
     

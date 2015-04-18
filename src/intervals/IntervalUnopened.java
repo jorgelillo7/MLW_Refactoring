@@ -108,5 +108,10 @@ public class IntervalUnopened extends Interval{
         return interval.intersectsWith(this);
         
     }
+    
+    @Override
+    public String toString() {
+        return "Interval [" + getMinimum() + ", " + getMaximum() + "]";
+    }
 
 }
