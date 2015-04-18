@@ -69,11 +69,11 @@ public class IntervalUnopened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalLeftOpened interval) {
-        if (this.getMinimum() == interval.getMaximum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
             return true;
         }
         
-        if (this.getMaximum() == interval.getMinimum()) {
+        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return false;
         }
 
