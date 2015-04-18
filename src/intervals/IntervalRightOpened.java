@@ -17,6 +17,7 @@ public class IntervalRightOpened extends Interval {
         return getMinimum() <= value && value < getMaximum();
     }
     
+    @Override
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = this.includes(interval.getMinimum());
         boolean maximumIncluded = this.includes(interval.getMaximum());
@@ -25,6 +26,7 @@ public class IntervalRightOpened extends Interval {
         
     }
     
+    @Override
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = this.includes(interval.getMinimum());
         boolean maximumIncluded = this.includes(interval.getMaximum());
@@ -32,6 +34,7 @@ public class IntervalRightOpened extends Interval {
                 && (maximumIncluded);
     }
     
+    @Override
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = this.includes(interval.getMinimum());
         boolean maximumIncluded = this.includes(interval.getMaximum());
@@ -39,6 +42,7 @@ public class IntervalRightOpened extends Interval {
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
     
+    @Override
     public boolean includes(IntervalUnopened interval) {
         boolean minimumIncluded = this.includes(interval.getMinimum());
         boolean maximumIncluded = this.includes(interval.getMaximum());
