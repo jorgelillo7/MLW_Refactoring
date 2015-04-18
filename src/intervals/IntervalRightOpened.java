@@ -39,4 +39,21 @@ public class IntervalRightOpened extends Interval {
         }
     }
     
+    public boolean includes(IntervalBothOpened interval){
+        return false;
+        
+    }
+    
+    public boolean includes(IntervalLeftOpened interval) {
+        return false;
+    }
+    
+    public boolean includes(IntervalRightOpened interval) {
+        return false;
+    }
+    
+    public boolean includes(IntervalUnopened interval) {
+        return false;
+    }
+    
 }
