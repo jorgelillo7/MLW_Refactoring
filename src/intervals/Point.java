@@ -25,7 +25,6 @@ public abstract class Point {
     public boolean menor(Point point) {
         return this.getValue() < point.getValue();
     }
-    
 
     public boolean menorIgual(Point point) {
         return this.menor(point) || this.igual(point);
