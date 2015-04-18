@@ -44,7 +44,7 @@ public class IntervalUnopened extends Interval{
         return (minimumIncluded || this.getMinimum() == interval.getMinimum())
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
-
+    
     @Override
     public boolean includes(Interval interval) {
         return interval.includes(this);
@@ -52,26 +52,54 @@ public class IntervalUnopened extends Interval{
 
     @Override
     public boolean intersectWith(IntervalBothOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return false;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalLeftOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return true;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return false;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalRightOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return true;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalUnopened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return true;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return true;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
 }

@@ -36,11 +36,7 @@ public abstract class Interval {
 
 	public boolean intersectsWith(Interval interval) {
 	    
-	    if (this.getMinimum() == interval.getMaximum() || getMinimum() == interval.getMaximum()) {
-	        return interval.intersectsWith(this);
-	    }
-
-	    return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+	    return interval.intersectsWith(this);
 	    
 		/*if (getMinimum() == interval.getMaximum()) {
 			switch (getOpening()) {

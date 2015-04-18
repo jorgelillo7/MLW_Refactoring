@@ -54,25 +54,53 @@ public class IntervalLeftOpened extends Interval {
 
     @Override
     public boolean intersectWith(IntervalBothOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return false;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalLeftOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return false;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalRightOpened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return true;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 
     @Override
     public boolean intersectWith(IntervalUnopened interval) {
-        // TODO Auto-generated method stub
-        return false;
+        if (this.getMinimum() == interval.getMaximum()) {
+            return false;
+        }
+        
+        if (this.getMaximum() == interval.getMinimum()) {
+            return true;
+        }
+
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
     }
 }
