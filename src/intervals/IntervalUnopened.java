@@ -19,7 +19,7 @@ public class IntervalUnopened extends Interval{
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || getMinimum() == interval.getMinimum())
+        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
         
     }
@@ -28,7 +28,7 @@ public class IntervalUnopened extends Interval{
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || getMinimum() == interval.getMinimum())
+        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
     
@@ -36,7 +36,7 @@ public class IntervalUnopened extends Interval{
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || getMinimum() == interval.getMinimum())
+        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
     
@@ -44,7 +44,7 @@ public class IntervalUnopened extends Interval{
     public boolean includes(IntervalUnopened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || getMinimum() == interval.getMinimum())
+        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
 
