@@ -51,4 +51,28 @@ public class IntervalLeftOpened extends Interval {
     public boolean includes(Interval interval) {
         return interval.includes(this);
     }
+
+    @Override
+    public boolean intersectWith(IntervalBothOpened interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean intersectWith(IntervalLeftOpened interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean intersectWith(IntervalRightOpened interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean intersectWith(IntervalUnopened interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
 }

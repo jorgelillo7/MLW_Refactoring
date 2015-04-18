@@ -24,7 +24,15 @@ public abstract class Interval {
     
     public abstract boolean includes(IntervalRightOpened interval);
     
-    public abstract boolean includes(IntervalUnopened interval);	
+    public abstract boolean includes(IntervalUnopened interval);
+    
+    public abstract boolean intersectWith(IntervalBothOpened interval);
+    
+    public abstract boolean intersectWith(IntervalLeftOpened interval);
+    
+    public abstract boolean intersectWith(IntervalRightOpened interval);
+    
+    public abstract boolean intersectWith(IntervalUnopened interval);
 
 	public boolean intersectsWith(Interval interval) {
 		if (getMinimum() == interval.getMaximum()) {
