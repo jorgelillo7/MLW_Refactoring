@@ -60,6 +60,7 @@ public class IntervalBothOpened extends Interval{
             return false;
         }
         
+        
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
