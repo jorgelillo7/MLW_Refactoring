@@ -21,8 +21,7 @@ public class IntervalRightOpened extends Interval {
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded || this.getMaximum() == interval.getMaximum());
+        return (minimumIncluded) && (maximumIncluded || this.getMaximum() == interval.getMaximum());
         
     }
     
@@ -30,24 +29,22 @@ public class IntervalRightOpened extends Interval {
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded);
+        return (minimumIncluded) && (maximumIncluded || interval.getMaximum() == this.getMaximum());
     }
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded || this.getMaximum() == interval.getMaximum());
+        return (minimumIncluded || interval.getMinimum() == this.getMinimum())
+                && (maximumIncluded || interval.getMaximum() == this.getMaximum());
     }
     
     @Override
     public boolean includes(IntervalUnopened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded);
+        return (minimumIncluded || interval.getMinimum() == this.getMinimum()) && (maximumIncluded);
     }
 
     @Override

@@ -28,16 +28,14 @@ public class IntervalBothOpened extends Interval{
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded);
+        return (minimumIncluded || this.getMinimum() == interval.getMinimum()) && (maximumIncluded);
     }
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded)
-                && (maximumIncluded || this.getMaximum() == interval.getMaximum());
+        return (minimumIncluded) && (maximumIncluded || this.getMaximum() == interval.getMaximum());
     }
     
     @Override
