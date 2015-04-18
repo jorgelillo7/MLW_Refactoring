@@ -45,8 +45,7 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean includes(Interval interval) {
-        // TODO Auto-generated method stub
-        return false;
+        return interval.includes(this);
     }
 
     
