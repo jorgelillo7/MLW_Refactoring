@@ -105,7 +105,7 @@ public class IntervalRightOpened extends Interval {
     
     @Override
     public String toString() {
-        return "Interval [" + getMinimum() + ", " + getMaximum() + ")";
+        return "Interval [" + getMinimum().getValue() + ", " + getMaximum().getValue() + ")";
     }
     
 }

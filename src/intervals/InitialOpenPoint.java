@@ -32,9 +32,18 @@ public class InitialOpenPoint extends Point {
         return false;
     }
 
+  //------------
+
     @Override
     public boolean menor(Point point) {
+        System.out.println("----> "+this.getValue()+" menor "+point.getValue()+ " = "+point.menor(this)+" -- "+point.getClass());
         return point.menor(this);
+    }
+    
+    @Override
+    public boolean mayor(Point point) {
+        System.out.println("----> "+this.getValue()+" mayor "+point.getValue()+ " = "+point.mayor(this)+" -- "+point.getClass());
+        return point.mayor(this);
     }
 
     @Override
@@ -44,7 +53,7 @@ public class InitialOpenPoint extends Point {
 
     @Override
     public boolean menor(InitialClosePoint point) {
-        return point.getValue() < this.getValue();
+        return point.getValue() <= this.getValue();
     }
 
     @Override
@@ -55,11 +64,6 @@ public class InitialOpenPoint extends Point {
     @Override
     public boolean menor(EndClosePoint point) {
         return point.getValue() < this.getValue();
-    }
-
-    @Override
-    public boolean mayor(Point point) {
-        return point.mayor(this);
     }
 
     @Override
@@ -81,5 +85,7 @@ public class InitialOpenPoint extends Point {
     public boolean mayor(EndClosePoint point) {
         return point.getValue() > this.getValue();
     }
+
+
 
 }
