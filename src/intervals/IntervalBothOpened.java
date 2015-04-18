@@ -60,9 +60,7 @@ public class IntervalBothOpened extends Interval{
             return false;
         }
         
-        System.out.println("Hasta aqui he llegado");
-
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -75,7 +73,7 @@ public class IntervalBothOpened extends Interval{
             return false;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -88,7 +86,7 @@ public class IntervalBothOpened extends Interval{
             return false;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -101,12 +99,11 @@ public class IntervalBothOpened extends Interval{
             return false;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
     
     @Override
     public boolean intersectsWith(Interval interval) {
-        System.out.println("Yo soy "+this.getClass()+" y la entrada es "+interval.getClass());
         return interval.intersectsWith(this);
         
     }

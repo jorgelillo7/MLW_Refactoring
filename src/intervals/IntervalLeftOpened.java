@@ -62,7 +62,7 @@ public class IntervalLeftOpened extends Interval {
             return false;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -75,7 +75,7 @@ public class IntervalLeftOpened extends Interval {
             return false;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -88,7 +88,7 @@ public class IntervalLeftOpened extends Interval {
             return true;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
@@ -101,7 +101,7 @@ public class IntervalLeftOpened extends Interval {
             return true;
         }
 
-        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
     
     @Override
