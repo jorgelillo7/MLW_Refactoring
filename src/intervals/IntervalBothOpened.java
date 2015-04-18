@@ -21,16 +21,16 @@ public class IntervalBothOpened extends Interval{
     
     @Override
     public boolean includes(IntervalBothOpened interval){
-        System.out.println();
-        System.out.println("THIS-->"+this);
-        System.out.println("INTERVAL-->"+interval);
-        System.out.println("Interval.includes(this.minimum)"+interval.includes(this.getMinimum()));
-        System.out.println("Interval.includes(this.maximum)"+interval.includes(this.getMaximum()));
         return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));    
     }
     
     @Override
     public boolean includes(IntervalLeftOpened interval) {
+        System.out.println();
+        System.out.println("THIS-->"+this);
+        System.out.println("INTERVAL-->"+interval);
+        System.out.println("Interval.includes(this.minimum)"+interval.includes(this.getMinimum()));
+        System.out.println("Interval.includes(this.maximum)"+interval.includes(this.getMaximum()));
         return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
     }
     

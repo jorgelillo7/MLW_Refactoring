@@ -31,4 +31,64 @@ public class InitialClosePoint extends Point{
         return this.getValue() == point.getValue();
     }
 
+    @Override
+    public boolean menor(Point point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean menor(InitialOpenPoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean menor(InitialClosePoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean menor(EndOpenPoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean menor(EndClosePoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean mayor(Point point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean mayor(InitialOpenPoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean mayor(InitialClosePoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean mayor(EndOpenPoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean mayor(EndClosePoint point) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
 }
