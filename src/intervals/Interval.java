@@ -10,7 +10,6 @@ public abstract class Interval {
 		this.setMaximum(maximum);
 	}
 
-	
 	public double midPoint() {
 		return (getMaximum() + getMinimum()) / 2;
 	}
@@ -18,7 +17,6 @@ public abstract class Interval {
 	public abstract boolean includes(double value);
 	
 	public abstract boolean includes(Interval interval);
-	
 	
 	public abstract boolean includes(IntervalBothOpened interval);
     
