@@ -17,6 +17,11 @@ public class IntervalRightOpened extends Interval {
         return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
     }
     
+    public boolean includes(double value) {
+        return this.includes(new ClosePoint(value));
+    }
+    
+    
     @Override
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = interval.includes(this.getMinimum());

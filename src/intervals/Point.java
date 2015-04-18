@@ -23,7 +23,7 @@ public abstract class Point {
     public abstract boolean igual(ClosePoint point);
     
     public boolean menor(Point point) {
-        return point.getValue() < this.getValue();
+        return this.getValue() < point.getValue();
     }
 
     public boolean menorIgual(Point point) {

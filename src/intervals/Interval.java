@@ -13,6 +13,8 @@ public abstract class Interval {
 	public double midPoint() {
 		return (getMaximum().getValue() + getMinimum().getValue()) / 2;
 	}
+	
+	public abstract boolean includes(double value);
 
 	public abstract boolean includes(Point point);
 	

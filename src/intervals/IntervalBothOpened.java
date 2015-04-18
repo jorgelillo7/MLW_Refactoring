@@ -15,12 +15,16 @@ public class IntervalBothOpened extends Interval{
         return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
     }
     
+    public boolean includes(double value) {
+        return this.includes(new ClosePoint(value));
+    }
+    
     @Override
     public boolean includes(IntervalBothOpened interval){
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum())
-                && (maximumIncluded || this.getMaximum() == interval.getMaximum());
+        return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue())
+                && (maximumIncluded || this.getMaximum().getValue() == interval.getMaximum().getValue());
         
     }
     
@@ -28,14 +32,14 @@ public class IntervalBothOpened extends Interval{
     public boolean includes(IntervalLeftOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded || this.getMinimum() == interval.getMinimum()) && (maximumIncluded);
+        return (minimumIncluded || this.getMinimum().getValue() == interval.getMinimum().getValue()) && (maximumIncluded);
     }
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
         boolean minimumIncluded = interval.includes(this.getMinimum());
         boolean maximumIncluded = interval.includes(this.getMaximum());
-        return (minimumIncluded) && (maximumIncluded || this.getMaximum() == interval.getMaximum());
+        return (minimumIncluded) && (maximumIncluded || this.getMaximum().getValue() == interval.getMaximum().getValue());
     }
     
     @Override
@@ -52,7 +56,7 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalBothOpened interval) {
-        if (this.getMinimum() == interval.getMaximum() || this.getMaximum() == interval.getMinimum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return false;
         }
         
@@ -62,7 +66,7 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalLeftOpened interval) {
-        if (this.getMinimum() == interval.getMaximum() || this.getMaximum() == interval.getMinimum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()){
             return false;
         }
         
@@ -71,7 +75,7 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalRightOpened interval) {
-        if (this.getMinimum() == interval.getMaximum() || this.getMaximum() == interval.getMinimum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()){
             return false;
         }
 
@@ -80,7 +84,7 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalUnopened interval) {
-        if (this.getMinimum() == interval.getMaximum() || this.getMaximum() == interval.getMinimum()) {
+        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()) {
             return false;
         }
 
