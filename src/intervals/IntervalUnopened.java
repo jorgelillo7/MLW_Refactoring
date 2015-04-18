@@ -12,7 +12,7 @@ public class IntervalUnopened extends Interval{
     }
     
     public boolean includes(Point point) {
-        return this.getMinimum().menor(point) && this.getMaximum().mayor(point);
+        return this.getMinimum().menorIgual(point) && this.getMaximum().mayorIgual(point);
     }
     
     public boolean includes(double value) {
