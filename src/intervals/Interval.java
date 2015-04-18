@@ -26,13 +26,13 @@ public abstract class Interval {
     
     public abstract boolean includes(IntervalUnopened interval);
     
-    public abstract boolean intersectWith(IntervalBothOpened interval);
+    public abstract boolean intersectsWith(IntervalBothOpened interval);
     
-    public abstract boolean intersectWith(IntervalLeftOpened interval);
+    public abstract boolean intersectsWith(IntervalLeftOpened interval);
     
-    public abstract boolean intersectWith(IntervalRightOpened interval);
+    public abstract boolean intersectsWith(IntervalRightOpened interval);
     
-    public abstract boolean intersectWith(IntervalUnopened interval);
+    public abstract boolean intersectsWith(IntervalUnopened interval);
 
 	public abstract boolean intersectsWith(Interval interval);
 

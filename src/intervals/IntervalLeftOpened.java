@@ -53,7 +53,7 @@ public class IntervalLeftOpened extends Interval {
     }
 
     @Override
-    public boolean intersectWith(IntervalBothOpened interval) {
+    public boolean intersectsWith(IntervalBothOpened interval) {
         if (this.getMinimum() == interval.getMaximum()) {
             return false;
         }
@@ -66,7 +66,7 @@ public class IntervalLeftOpened extends Interval {
     }
 
     @Override
-    public boolean intersectWith(IntervalLeftOpened interval) {
+    public boolean intersectsWith(IntervalLeftOpened interval) {
         if (this.getMinimum() == interval.getMaximum()) {
             return false;
         }
@@ -79,7 +79,7 @@ public class IntervalLeftOpened extends Interval {
     }
 
     @Override
-    public boolean intersectWith(IntervalRightOpened interval) {
+    public boolean intersectsWith(IntervalRightOpened interval) {
         if (this.getMinimum() == interval.getMaximum()) {
             return false;
         }
@@ -92,7 +92,7 @@ public class IntervalLeftOpened extends Interval {
     }
 
     @Override
-    public boolean intersectWith(IntervalUnopened interval) {
+    public boolean intersectsWith(IntervalUnopened interval) {
         if (this.getMinimum() == interval.getMaximum()) {
             return false;
         }
