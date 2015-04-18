@@ -45,5 +45,11 @@ public class IntervalRightOpened extends Interval {
         return (minimumIncluded || getMinimum() == interval.getMinimum())
                 && (maximumIncluded);
     }
+
+    @Override
+    public boolean includes(Interval interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
     
 }

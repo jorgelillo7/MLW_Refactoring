@@ -43,4 +43,10 @@ public class IntervalLeftOpened extends Interval {
         return (minimumIncluded)
                 && (maximumIncluded || getMaximum() == interval.getMaximum());
     }
+
+    @Override
+    public boolean includes(Interval interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
 }

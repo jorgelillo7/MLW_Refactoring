@@ -43,5 +43,11 @@ public class IntervalBothOpened extends Interval{
         return (minimumIncluded) && (maximumIncluded);
     }
 
+    @Override
+    public boolean includes(Interval interval) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
     
 }
