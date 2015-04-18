@@ -35,7 +35,14 @@ public abstract class Interval {
     public abstract boolean intersectWith(IntervalUnopened interval);
 
 	public boolean intersectsWith(Interval interval) {
-		if (getMinimum() == interval.getMaximum()) {
+	    
+	    if (this.getMinimum() == interval.getMaximum() || getMinimum() == interval.getMaximum()) {
+	        return interval.intersectsWith(this);
+	    }
+
+	    return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+	    
+		/*if (getMinimum() == interval.getMaximum()) {
 			switch (getOpening()) {
 			case BOTH_OPENED:
 			case LEFT_OPENED:
@@ -62,9 +69,8 @@ public abstract class Interval {
 				assert false;
 				return false;
 			}
-		}
-		return this.includes(interval.getMinimum())
-				|| this.includes(interval.getMaximum());
+		}*/
+		
 	}
 
 	@Override
