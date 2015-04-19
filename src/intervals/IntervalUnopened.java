@@ -18,31 +18,6 @@ public class IntervalUnopened extends Interval{
     public boolean includes(double value) {
         return this.includes(new InitialClosePoint(value));
     }
-    
-    @Override
-    public boolean includes(IntervalBothOpened interval){
-        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));    
-    }
-    
-    @Override
-    public boolean includes(IntervalLeftOpened interval) {
-        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
-    }
-    
-    @Override
-    public boolean includes(IntervalRightOpened interval) {
-        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
-    }
-    
-    @Override
-    public boolean includes(IntervalUnopened interval) {
-        return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
-    }
-    
-    @Override
-    public boolean includes(Interval interval) {
-        return interval.includes(this);
-    }
 
     @Override
     public boolean intersectsWith(IntervalBothOpened interval) {

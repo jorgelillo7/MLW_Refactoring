@@ -18,15 +18,9 @@ public abstract class Interval {
 
 	public abstract boolean includes(Point point);
 	
-	public abstract boolean includes(Interval interval);
-	
-	public abstract boolean includes(IntervalBothOpened interval);
-    
-    public abstract boolean includes(IntervalLeftOpened interval);
-    
-    public abstract boolean includes(IntervalRightOpened interval);
-    
-    public abstract boolean includes(IntervalUnopened interval);
+	public boolean includes(Interval interval) {
+        return (this.includes(interval.getMinimum())) && (this.includes(interval.getMaximum()));
+    }
     
     public abstract boolean intersectsWith(IntervalBothOpened interval);
     
