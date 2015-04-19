@@ -11,10 +11,6 @@ public class IntervalBothOpened extends Interval{
         return Opening.BOTH_OPENED;
     }
     
-    public boolean includes(Point point) {
-        return this.getMinimum().menorIgual(point) && this.getMaximum().mayorIgual(point);
-    }
-    
     public boolean includes(double value) {
         return this.includes(new InitialClosePoint(value));
     }

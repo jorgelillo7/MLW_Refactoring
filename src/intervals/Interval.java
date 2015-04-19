@@ -16,7 +16,9 @@ public abstract class Interval {
 	
 	public abstract boolean includes(double value);
 
-	public abstract boolean includes(Point point);
+	public boolean includes(Point point) {
+        return this.getMinimum().menorIgual(point) && this.getMaximum().mayorIgual(point);
+    }
 	
 	public boolean includes(Interval interval) {
         return (this.includes(interval.getMinimum())) && (this.includes(interval.getMaximum()));
