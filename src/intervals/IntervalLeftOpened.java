@@ -18,31 +18,6 @@ public class IntervalLeftOpened extends Interval {
     public boolean includes(double value) {
         return this.includes(new InitialClosePoint(value));
     }
-
-    @Override
-    public boolean intersectsWith(IntervalBothOpened interval) {
-        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
-    }
-
-    @Override
-    public boolean intersectsWith(IntervalLeftOpened interval) {
-        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
-    }
-
-    @Override
-    public boolean intersectsWith(IntervalRightOpened interval) {
-        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
-    }
-
-    @Override
-    public boolean intersectsWith(IntervalUnopened interval) {
-        return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
-    }
-    
-    @Override
-    public boolean intersectsWith(Interval interval) {   
-        return interval.intersectsWith(this);  
-    }
     
     @Override
     public String toString() {

@@ -21,16 +21,10 @@ public abstract class Interval {
 	public boolean includes(Interval interval) {
         return (this.includes(interval.getMinimum())) && (this.includes(interval.getMaximum()));
     }
-    
-    public abstract boolean intersectsWith(IntervalBothOpened interval);
-    
-    public abstract boolean intersectsWith(IntervalLeftOpened interval);
-    
-    public abstract boolean intersectsWith(IntervalRightOpened interval);
-    
-    public abstract boolean intersectsWith(IntervalUnopened interval);
-
-	public abstract boolean intersectsWith(Interval interval);
+	
+	public boolean intersectsWith(Interval interval) {
+        return this.includes(interval.getMinimum()) || this.includes(interval.getMaximum());
+    }
 	
 	@Override
 	public boolean equals(Object object) {
