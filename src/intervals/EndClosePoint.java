@@ -35,13 +35,11 @@ public class EndClosePoint extends Point{
 
     @Override
     public boolean menor(Point point) {
-        System.out.println("----> "+this.getValue()+" menor "+point.getValue()+ " = "+point.menor(this)+" -- "+point.getClass());
         return point.menor(this);
     }
     
     @Override
     public boolean mayor(Point point) {
-        System.out.println("----> "+this.getValue()+" mayor "+point.getValue()+ " = "+point.mayor(this)+" -- "+point.getClass());
         return point.mayor(this);
     }
 

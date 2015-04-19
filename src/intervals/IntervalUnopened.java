@@ -46,61 +46,27 @@ public class IntervalUnopened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalBothOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
-            return false;
-        }
-        
-        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return false;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalLeftOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
-            return true;
-        }
-        
-        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return false;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalRightOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
-            return false;
-        }
-        
-        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return true;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalUnopened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue()) {
-            return true;
-        }
-        
-        if (this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return true;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
     
     @Override
-    public boolean intersectsWith(Interval interval) {
-        
-        return interval.intersectsWith(this);
-        
+    public boolean intersectsWith(Interval interval) {   
+        return interval.intersectsWith(this);  
     }
     
     @Override

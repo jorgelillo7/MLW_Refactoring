@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class IntervalTest {
 
-	@Test
+    @Test
 	public void midPointTest() {
 		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
 		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
@@ -27,7 +27,7 @@ public class IntervalTest {
 		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.UNOPENED).midPoint(), 0.0);
 	}
 
-	
+	@Test
 	public void includeValueTest() {
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.BOTH_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(-3));
@@ -197,7 +197,7 @@ public class IntervalTest {
 
 	}
 
-	
+	@Test
 	public void hasIntersectionTest() {
 
 		Interval bothOpenedPivot = IntervalFactory.getInterval(20, 40, Opening.BOTH_OPENED);

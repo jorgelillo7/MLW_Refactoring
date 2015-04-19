@@ -31,11 +31,6 @@ public class IntervalBothOpened extends Interval{
     
     @Override
     public boolean includes(IntervalRightOpened interval) {
-        System.out.println();
-        System.out.println("THIS-->"+this);
-        System.out.println("INTERVAL-->"+interval);
-        System.out.println("Interval.includes(this.minimum)"+interval.includes(this.getMinimum()));
-        System.out.println("Interval.includes(this.maximum)"+interval.includes(this.getMaximum()));
         return (interval.includes(this.getMinimum())) && (interval.includes(this.getMaximum()));
     }
     
@@ -51,45 +46,27 @@ public class IntervalBothOpened extends Interval{
 
     @Override
     public boolean intersectsWith(IntervalBothOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return false;
-        }
-        
-        
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalLeftOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()){
-            return false;
-        }
-        
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalRightOpened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()){
-            return false;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
 
     @Override
     public boolean intersectsWith(IntervalUnopened interval) {
-        if (this.getMinimum().getValue() == interval.getMaximum().getValue() || this.getMaximum().getValue() == interval.getMinimum().getValue()) {
-            return false;
-        }
-
         return interval.includes(this.getMinimum()) || interval.includes(this.getMaximum());
     }
     
     @Override
-    public boolean intersectsWith(Interval interval) {
-        return interval.intersectsWith(this);
-        
+    public boolean intersectsWith(Interval interval) {   
+        return interval.intersectsWith(this);  
     }
     
     @Override
